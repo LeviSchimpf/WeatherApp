@@ -10,6 +10,9 @@
     "machine-translate": "inlang machine translate --project project.inlang"
   },
   "dependencies": {
+    "@gcds-core/components": "^1.6.0",
+    "@gcds-core/components-react": "^1.6.0",
+    "@gcds-core/css-shortcuts": "^1.2.0",
     "@react-router/node": "^8.4.0",
     "@react-router/serve": "^8.4.0",
     "@reduxjs/toolkit": "^2.12.0",

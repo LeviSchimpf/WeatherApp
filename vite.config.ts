@@ -9,3 +9,4 @@ export default defineConfig({
     tsconfigPaths: true,
   },
 });
+//vite.config.ts specifies plugins!
