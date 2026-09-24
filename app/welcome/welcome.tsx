@@ -2,6 +2,7 @@ import logoDark from "./logo-dark.svg";
 import logoLight from "./logo-light.svg";
 import WeatherImage from "./WeatherImage.jpg";
 import {GcdsRadios} from '/node_modules/@gcds-core/components-react';
+import { GcdsButton } from "/node_modules/@gcds-core/components-react";
 import '/node_modules/@gcds-core/components-react/gcds.css';
 
 
@@ -27,21 +28,16 @@ export function Welcome() {
           </div>
         </header>
         <div className="max-w-[300px] w-full space-y-6 px-4">
-          <GcdsRadios 
-            legend="Select An Option" 
-            name="radio-group-name" 
-            options='[
-              {"id":"radio-1","label":"Weather","value": "1"},
-              {"id":"radio-2","label":"Weather 2!","value": "2"}
-            ]'>
-          </GcdsRadios>  
+          
           <nav className="rounded-3xl border border-gray-200 p-6 dark:border-gray-700 space-y-4">
             <p className="leading-6 text-gray-700 dark:text-gray-200 text-center">
               Weather API Used:
             </p>
             <a href="https://open-meteo.com/">Open-Meteo</a>
-            <a href="http://localhost:5173/about">Open-About</a>
-            
+            <div>
+              <p>Daily Weather</p><NavigationButton />
+              <p>Weekly Weather</p><NavigationButton />
+            </div>
           </nav>
         </div>
       </div>
@@ -98,4 +94,16 @@ export default function NavigationHeader() {
 
     </ul>
   );
+}
+
+export function NavigationButton () {
+  
+  const handleClick = (): void => {
+    window.location.href = "http://localhost:5173/weatherWeek"
+  }
+  return (
+    <GcdsButton type="button" buttonId="WeatherReport" onclick={handleClick}>
+              Weather Report
+    </GcdsButton>
+  )
 }
